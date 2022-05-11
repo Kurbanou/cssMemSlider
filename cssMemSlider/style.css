@@ -1,0 +1,161 @@
+:root{
+    --color-light-xl: #ffffff;
+    --color-primary:#f1cdb3;
+    --color-primary-light:#fddcc4;
+    --color-light-s: #fafafa;
+    --color-dark-s:#cdcdcd;
+    --color-dark-3xl:#292929;
+    --color-dark-l: #545454;
+    --color-dark-xl: #4c4c4c;
+    --color-light-l: #f6f6f6;
+    --color-dark-m: #b2b2b2;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  
+  }
+  
+  body{
+    display: flex;
+    flex-direction: column;    
+    justify-content: center;
+    min-height: 100vh;
+    background-color: var(--color-light-xl);
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 2em;
+  }
+  
+  .wrapper {  
+    width: 80%;
+    padding: 0 2em;  
+    margin: 0 auto;
+  }
+  
+  .slider {
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 1em;
+    overflow: hidden;  
+  }
+   
+  .slider__inner {  
+    display: flex;
+  }
+  
+  .slide {
+    background-color: var(--color-light-l);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-shrink: 0;  
+    width: 100%;
+    
+  }
+  
+  .slider__nav { 
+    display: flex; 
+  }
+  
+  a{ 
+    width: 5px;
+    height: 5px;
+    border: var(--color-primary)  solid 3px ;
+    box-shadow: inset 30px 30px 30px var(--color-primary); 
+    border-radius:100%;
+    padding: 10px;
+    margin: 10px;
+    display: block;  
+  }
+  
+  a:hover,
+  .active:hover{
+    border: var(--color-light-xl)  solid 3px ;
+  }
+  
+  a:hover{
+    box-shadow: inset 30px 30px 30px var(--color-light-xl);
+  }
+  
+  .active:hover,
+  .active{
+    box-shadow: none;  
+  }
+  
+  
+  .text{
+    transform: translate(0, 100%);
+    transition: all .3s;
+    flex-grow:  1;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .img{
+    transform: translate(0, -200%);
+    transition: all .3s;
+    flex-grow:  1;  
+  }
+  
+  .img img{
+    width: 100%;
+    flex-grow: 0;   
+    display: block;  
+  }
+  
+  :target .text,
+  :target .img
+  {
+    transform: translate(0,0);
+  }
+  
+  
+  .first.text{
+    animation-name: slideText;  
+    animation-duration: .3s;
+    transform: translate(0, 0);
+  }
+  
+  .first.img {
+    animation-name: slideImg;  
+    animation-duration: .3s; 
+    transform: translate(0, 0);
+  }
+  
+  @keyframes slideText {
+    from {
+      transform: translate(0, 100%);
+    }
+  
+    to {
+      transform: translate(0, 0);
+    }
+  }
+  
+  @keyframes slideImg {
+    from {
+      transform: translate(0, -200%);
+    }
+  
+    to {
+      transform: translate(0, 0);
+    }
+  }
+  
+  
+  @media (max-width: 778px){
+  
+    .wrapper{
+      width: 100%;
+      padding: 0 1em;
+    }
+    
+  }
