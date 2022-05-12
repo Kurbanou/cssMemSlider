@@ -1,14 +1,10 @@
 :root{
-    --color-light-xl: #ffffff;
-    --color-primary:#f1cdb3;
-    --color-primary-light:#fddcc4;
-    --color-light-s: #fafafa;
-    --color-dark-s:#cdcdcd;
-    --color-dark-3xl:#292929;
-    --color-dark-l: #545454;
-    --color-dark-xl: #4c4c4c;
-    --color-light-l: #f6f6f6;
-    --color-dark-m: #b2b2b2;
+    --color-light-xl: #ffffff;  
+    --color-dark-3xl:#242c38;
+    --color-dark-l: #4b5973;
+    --color-control: #00c5b9;;
+    --color-shadow: #171c24;;
+   
   }
 
   * {
@@ -28,8 +24,9 @@
     flex-direction: column;
     justify-content: center;
     min-height: 100vh;
-    background-color: var(--color-light-xl);
+    background-color: var(--color-dark-3xl);
     font-family: 'Yanone Kaffeesatz', sans-serif;
+    color: var(--color-light-xl);
 
   }
 
@@ -42,16 +39,16 @@
   .slider {
     max-width: 800px;
     margin: 0 auto;
-    border-radius: 1em;
     overflow: hidden;
   }
 
   .slider__inner {
-    display: flex;
+    display: flex;  
+    gap: 50px  
   }
 
   .slide {
-    background-color: var(--color-light-l);
+    gap: 1em;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -64,61 +61,68 @@
     display: flex;
   }
 
-  a {
-    padding: 5px;
-    margin: 10px;
+  a {   
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
+    padding: 10px;
+    margin: 5px;       
   }
 
   .contor{
-    fill: #BDAE82;
-    width: 10px;
+    fill: var(--color-dark-l);    
   }
 
+  a:link .contor{
+    opacity: .7;
+  }
 
+  a.active .contor{
+    fill: var(--color-control); 
+    opacity: .7;
+  }
 
-  .text{
-    transform: translate(0, 100%);
+  a:active .contor{
+    fill: var(--color-light-xl); 
+    opacity: 1;
+  } 
+
+  a:hover .contor{
+    opacity: 1;      
+  }
+  
+  .text{    
     transition: all .3s;
-    flex-grow:  1;
-    padding: 10px;
+    flex-grow:  1;    
     display: flex;
     align-items: center;
-    font-size: 1.5em;
+    font-size: 1.5em;    
   }
 
-  .img{
-    transform: translate(0, -200%);
+  .img{    
     transition: all .3s;
-    flex-grow:  1;
+    flex-grow:  1; 
+    border: solid .3rem var(--color-dark-l);  
+    -webkit-box-shadow: 0 0 15px 8px var(--color-shadow);
+    box-shadow: 0 0 15px 8px var(--color-shadow);     
   }
 
   .img img{
-    width: 100%;
-    flex-grow: 0;
+    width: 100%;    
     display: block;
   }
 
-  :target .text,
+ 
   :target .img
-  {
-    transform: translate(0,0);
-  }
-
-
-  .first.text{
-    animation-name: slideText;
-    animation-duration: .3s;
-    transform: translate(0, 0);
-  }
-
-  .first.img {
+  {    
     animation-name: slideImg;
-    animation-duration: .3s;
-    transform: translate(0, 0);
+    animation-duration: .3s;    
+  }
+
+  :target .text{
+    animation-name: slideText;
+    animation-duration: .3s;    
   }
 
   @keyframes slideText {
@@ -142,7 +146,7 @@
   }
 
 
-  @media (max-width: 778px){
+  @media (max-width: 768px){
 
     .wrapper{
       width: 100%;
