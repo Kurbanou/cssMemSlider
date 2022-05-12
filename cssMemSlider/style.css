@@ -37,14 +37,14 @@
   }
 
   .slider {
-    max-width: 800px;
+    max-width: 50rem;
     margin: 0 auto;
     overflow: hidden;
   }
 
   .slider__inner {
     display: flex;  
-    gap: 50px  
+    gap: 5em  
   }
 
   .slide {
@@ -54,11 +54,11 @@
     justify-content: space-between;
     flex-shrink: 0;
     width: 100%;
-
   }
 
   .slider__nav {
     display: flex;
+    gap: .5em;
   }
 
   a {   
@@ -66,8 +66,7 @@
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    padding: 10px;
-    margin: 5px;       
+    padding: .6em;        
   }
 
   .contor{
@@ -104,8 +103,8 @@
     transition: all .3s;
     flex-grow:  1; 
     border: solid .3rem var(--color-dark-l);  
-    -webkit-box-shadow: 0 0 15px 8px var(--color-shadow);
-    box-shadow: 0 0 15px 8px var(--color-shadow);     
+    -webkit-box-shadow: 0 0 .8rem .4rem var(--color-shadow);
+    box-shadow: 0 0 .8rem .4rem var(--color-shadow);     
   }
 
   .img img{
