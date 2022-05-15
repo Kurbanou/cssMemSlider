@@ -167,31 +167,32 @@ a:hover .contor{
   }
   .text{
     order: 3;
+    max-width: 100%;
     width: 100%;
   }
 
 }
 
-#slides__1 {
+#s1 {
   display: flex;
 }
 
-#slides__1 .img{
+#s1 .img{
   background: url(./assets/img/1.jpg) no-repeat;
   background-size: cover;
 }
 
-#slides__2 .img{
+#s2 .img{
   background: url(./assets/img/2.jpg) no-repeat;
   background-size: cover;
 }
 
-#slides__3 .img{
+#s3 .img{
   background: url(./assets/img/3.jpg) no-repeat;
   background-size: cover;
 }
 
-#slides__4 .img{
+#s4 .img{
   background: url(./assets/img/4.jpg) no-repeat;
   background-size: cover;
 }
